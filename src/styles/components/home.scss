@@ -1,0 +1,17 @@
+.home{
+    display: flex;
+    flex-flow: row;
+}
+
+.home__list{
+    width: 30vw;
+    height: 100vh;
+    overflow: auto;
+    
+}
+
+.home__info{
+    width: 70vw;
+    height: 100vh;
+    overflow: auto;
+}

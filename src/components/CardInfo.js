@@ -5,7 +5,7 @@ export const CardInfo = (props) =>
     (
         <div className="cardinfo">
             
-        <img className="img" src={"http://52.57.88.137/api/card_image/"+props.param.name} />
+        <img className="img flex1" src={"http://52.57.88.137/api/card_image/"+props.param.name} />
 
         <div className="infobox">
         <div className="desc">

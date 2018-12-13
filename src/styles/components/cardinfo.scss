@@ -3,7 +3,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
 }
-
+ 
 .img{
    
     width: 70;
@@ -45,13 +45,15 @@
 
     .img{
         margin:3% auto;
-        width: 60%;
+        max-width: 60%;
+        min-width: 30%;
     }
 
     .infobox{
         margin: 5%;
     
     }
+
 
   }
 

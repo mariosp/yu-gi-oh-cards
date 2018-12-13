@@ -46,17 +46,22 @@ export class Home extends React.Component{
     
     componentDidMount(){
        this.getData();
-    
      }
 
      selectItem(e){
 
         let id = e.currentTarget.dataset.id;
-
+        document.getElementsByClassName("cardbox")[this.state.selected].classList.remove('active-item');
+    
+        document.getElementsByClassName("cardbox")[id].classList.add('active-item');
         this.setState({
             ...this.state,
             selected: id
         })
+
+        
+
+        
 
      }
     
@@ -66,14 +71,14 @@ export class Home extends React.Component{
         
         let i=0;
 
-
+        
         
         return(
             
     <div className="wrapper">
         <nav id="sidebar" >
             <div className="sidebar-header">
-                <h3>Yu-Gu-Oh! List</h3>
+            <img className="logo" src="./images/logo1.png" />
             </div>
 
                 {this.state.cards.map(el => (

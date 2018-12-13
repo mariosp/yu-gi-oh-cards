@@ -3,7 +3,6 @@ import CardItem from './CardItem';
 import CardInfo from './CardInfo';
 import cardTable from '../datastore/CardTable';
 import OCButton from './OCButton'
-import Title from './Title';
 
 
 
@@ -15,19 +14,15 @@ export class Home extends React.Component{
         this.state = {
             cards: [],
             selected: 0
-            };
+        };
 
-
-            this.selectItem = this.selectItem.bind(this);
-      
-            
-    }
+        this.selectItem = this.selectItem.bind(this);  
+        }
     
     
       getData(){
         let cards =[];
         cardTable.forEach( async (element) => {
-             console.log(element);
             let response = await fetch('http://52.57.88.137/api/card_data/'+ element);
             let json = await response.json();
             console.log(json);
@@ -41,11 +36,12 @@ export class Home extends React.Component{
             });
         });
     
-          }
+    }
     
     
     componentDidMount(){
        this.getData();
+
      }
 
      selectItem(e){
@@ -59,10 +55,6 @@ export class Home extends React.Component{
             selected: id
         })
 
-        
-
-        
-
      }
     
     
@@ -71,8 +63,6 @@ export class Home extends React.Component{
         
         let i=0;
 
-        
-        
         return(
             
     <div className="wrapper">
@@ -109,32 +99,14 @@ export class Home extends React.Component{
         
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
             
         );
 
 
-    }
-    
-    
-    
-    
+    }  
     
     }
 
 
 export default Home;
 
-//{ this.state.cards.length >0 && <CardInfo param={this.state.cards[this.state.selected] } /> }

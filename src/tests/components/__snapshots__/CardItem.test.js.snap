@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CardItem (sidebar box) with card name and card_type 1`] = `
+<div
+  className="cardbox"
+>
+  <div
+    className="carditem"
+  >
+    <h5>
+      Monster Gate
+    </h5>
+    <div
+      className="ctype"
+    >
+      spell
+    </div>
+  </div>
+</div>
+`;

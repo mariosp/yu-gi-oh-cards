@@ -18,14 +18,13 @@ export const CardInfo = (props) =>
         <div className="details">
         <h3>Details</h3>
         <div className="text">
-        {props.param.card_type ? <li>Card Type: {props.param.card_type}</li>:''}
-        {props.param.family ? <li>Family: {props.param.family}</li>:''}
-        {props.param.type ? <li>Type: {props.param.type}</li>:''}
-        {props.param.property ? <li>Property: {props.param.property}</li>:''}
-        {props.param.property ? <li>Property: {props.param.property}</li>:''}
-        {props.param.level ? <li>Level: {props.param.level}</li>:''}
-        {props.param.atk ? <li>Attack: {props.param.atk}</li>:''}
-        {props.param.def ? <li>Defence: {props.param.def}</li>:''}
+        {props.param.card_type ? <li><span>Card Type:</span> {props.param.card_type}</li>:''}
+        {props.param.family ? <li><span>Family:</span> {props.param.family}</li>:''}
+        {props.param.type ? <li><span>Type:</span> {props.param.type}</li>:''}
+        {props.param.property ? <li><span>Property:</span> {props.param.property}</li>:''}
+        {props.param.level ? <li><span>Level:</span> {props.param.level}</li>:''}
+        {props.param.atk ? <li><span>Attack:</span> {props.param.atk}</li>:''}
+        {props.param.def ? <li><span>Defence:</span> {props.param.def}</li>:''}
         </div>
         
         </div>

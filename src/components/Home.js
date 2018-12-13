@@ -1,7 +1,10 @@
 import React from 'react';
 import CardItem from './CardItem';
 import CardInfo from './CardInfo';
-import cardTable from '../datastore/CardTable'
+import cardTable from '../datastore/CardTable';
+import OCButton from './OCButton'
+import Title from './Title';
+
 
 
 export class Home extends React.Component{
@@ -63,34 +66,61 @@ export class Home extends React.Component{
         
         let i=0;
 
+
         
         return(
-            <div className="home">
-            <div className="home__list">
-            <div>
-           
-                
-            {this.state.cards.map(el => (
-                
-                <div onClick={this.selectItem} data-id={i++}>
-                <CardItem  name={el.name} type={el.card_type} />
-                </div>
-            ))}
-
-            </div>
+            
+    <div className="wrapper">
+        <nav id="sidebar" >
+            <div className="sidebar-header">
+                <h3>Yu-Gu-Oh! List</h3>
             </div>
 
+                {this.state.cards.map(el => (
+                    
+                    <div onClick={this.selectItem} data-id={i++}>
+                    <CardItem  name={el.name} type={el.card_type} />
+                    </div>
+                ))}
 
-            <div className="home__info">
-                
-            {this.state.cards.length >0? <CardInfo param={this.state.cards[this.state.selected] } /> : ''}
+
+
+        </nav>
+ 
     
+        <div id="content">
+            <div className="title">
+                
+                <OCButton />
+                
+                {this.state.cards.length >0 ? <h2>{this.state.cards[this.state.selected].name}</h2> : ''}
+                
+                    
             </div>
+
+            {this.state.cards.length >0 ? <CardInfo param={this.state.cards[this.state.selected] } /> : ''}
+            
+            
         
-            </div>
-    
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
             
         );
+
+
     }
     
     

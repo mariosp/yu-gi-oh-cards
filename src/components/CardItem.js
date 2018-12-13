@@ -4,10 +4,11 @@ import {Link} from 'react-router-dom';
 
 const CardItem =  (props) =>(
 
-    
-    <div>
-        <h4>{props.name}</h4>
-        <p>{props.type}</p>
+   <div className="cardbox"> 
+    <div className="carditem">
+        <h5>{props.name}</h5>
+        <div className="ctype">{props.type}</div>
+    </div>
     </div>
 
 

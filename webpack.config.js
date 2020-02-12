@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env)=>{
     const isProduction = env == "production";
-    
+
     return{
         entry : ['babel-polyfill','./src/app.js'],
         output: {
@@ -16,36 +16,36 @@ module.exports = (env)=>{
                 test: /\.js$/,
                 exclude:/node_modules/
             },{
-            test:/\.s?css$/,
-            use: [
-                MiniCssExtractPlugin.loader,
-                { loader: 'css-loader',
-                 options: {
-                      sourceMap: true 
-                    } 
-                },
-                { loader: 'sass-loader',
-                 options: {
-                      sourceMap: true 
-                    } 
-                }
-            ] 
+                test:/\.s?css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    { loader: 'css-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                    { loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                ]
             }]
         },
         plugins:[
             new MiniCssExtractPlugin({
                 filename: "styles.css"
             })
-        ],    
+        ],
         devtool: isProduction? 'source-map' : "inline-source-map",
-    
+
         devServer:{
-                contentBase: path.join(__dirname,'public') ,
-                historyApiFallback : true,
-                publicPath: '/dist/'
+            contentBase: path.join(__dirname,'public') ,
+            historyApiFallback : true,
+            publicPath: '/dist/'
         }
-    
+
     }
 
 
-    } //end arrow function
+} //end arrow function

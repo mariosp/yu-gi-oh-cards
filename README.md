@@ -1,6 +1,6 @@
 ![Heroku](https://heroku-badge.herokuapp.com/?app=yu-gi-oh-mp)
 <h1 align="center">
-Yu-Gi-Oh Cards
+Yu-Gi-Oh! Cards
 </h1>
 
 <p align="center">React<p>

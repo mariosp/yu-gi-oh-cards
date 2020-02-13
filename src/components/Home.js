@@ -23,17 +23,21 @@ export class Home extends React.Component{
       getData(){
         let cards =[];
         cardTable.forEach( async (element) => {
-            let response = await fetch('http://52.57.88.137/api/card_data/'+ element);
-            let json = await response.json();
-            console.log(json);
-            if(json.status == "success"){
-                cards.push(json.data);
+            try {
+                let response = await fetch('https://db.ygoprodeck.com/api/v6/cardinfo.php?name=' + element);
+                let json = await response.json();
+                console.log(json[0]);
+                if (json && !json["error"]) {
+                    console.log(json)
+                    cards.push(json[0]);
+                    this.setState({
+                        ...this.state,
+                        cards: cards
+                    });
+                }
+            }catch (e) {
+
             }
-            
-            this.setState({
-                ...this.state,
-                cards: cards
-            });
         });
     
     }
@@ -68,18 +72,13 @@ export class Home extends React.Component{
     <div className="wrapper">
         <nav id="sidebar" >
             <div className="sidebar-header">
-            <img className="logo" src="./images/logo1.png" />
+                <img className="logo" src="./images/logo1.png" />
             </div>
-
                 {this.state.cards.map(el => (
-                    
-                    <div onClick={this.selectItem} data-id={i++}>
-                    <CardItem  name={el.name} type={el.card_type} />
+                    <div onClick={this.selectItem} data-id={i++} key={el.id}>
+                        <CardItem  name={el.name} type={el.type} />
                     </div>
                 ))}
-
-
-
         </nav>
  
     
